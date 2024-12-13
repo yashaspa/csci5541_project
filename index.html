@@ -18,7 +18,7 @@
 
 <body>
   <div class="wrapper">
-    <h1 style="font-family: 'Lato', sans-serif;">Automated School Planner</h1>
+    <h1 style="font-family: 'Lato', sans-serif;">Enhancing Gift Recommendations</h1>
     <h4 style="font-family: 'Lato', sans-serif;">Fall 2024 CSCI 5541 NLP: Class Project - University of Minnesota</h4>
     <h4 style="font-family: 'Lato', sans-serif;">Team Backpropagation Nation</h4>
 
@@ -52,12 +52,12 @@
       <div class="publication-links">
         <!-- Links for final report, code, and model weights -->
         <span class="link-block">
-          <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark is-outlined">
+          <a href="files/report.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark is-outlined">
             <span>Final Report</span>
           </a>
         </span>
         <span class="link-block">
-          <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark is-outlined">
+          <a href="files/code.zip" target="_blank" class="external-link button is-normal is-rounded is-dark is-outlined">
             <span>Code</span>
           </a>
         </span>
@@ -74,66 +74,102 @@
     <hr>
     
     <h2 id="abstract">Abstract</h2>
-    <p>College students often struggle with managing their academic workload due to a lack of structure and unoptimized time allocation. Our project, Automated School Planner, integrates a large language model (LLM) with existing academic tools like Canvas to provide a personalized, adaptive scheduling solution. By considering task descriptions, difficulty, and deadlines, we aim to provide a proactive and realistic time management tool that reduces stress and maximizes productivity, enabling students to maintain a balanced academic life.</p>
+    <p>This study investigates integrating modern natural language processing (NLP) techniques into recommendation systems to address the cold start problem and improve user satisfaction. We evaluate four models, finding that approaches incorporating sentiment analysis and semantic reasoning achieved average star ratings of 4.44 compared to 2.50 for the baseline. Additionally, an exploratory generative model using LLMs and DALL	E demonstrates potential in producing novel recommendations but faces challenges in diversity and scalability. Our findings highlight the value of hybrid approaches that combine retrieval-based and generative methods, offering practical and scalable solutions for businesses while identifying key areas for future improvement.</p>
 
     <hr>
 
     <h2 id="teaser">Teaser Figure</h2>
-    <p>Our teaser figure conveys the core concept of our project: integrating LLMs with student data to provide personalized scheduling. This visual representation showcases the flow from data retrieval, analysis, and the generation of a schedule for the student. This concept addresses the critical issue of effective academic time management. Below is an example to highlight the automated school planner's application.</p>
-    <p class="sys-img"><img src="./files/teeaser.png" alt="Teaser Image"></p>
+    <p>Our teaser figure illustrates the core framework of our project: integrating NLP techniques, including embeddings, sentiment analysis, and generative AI, into product recommendation systems to address the cold start problem and enhance user satisfaction. The diagram highlights the data flow from preprocessing and vector generation to various recommendation models that refine and personalize suggestions based on user preferences. This innovative approach demonstrates the potential for scalable, efficient, and context-aware recommendation systems in e-commerce.</p>
+    <p class="sys-img"><img src="./files/teaser.png" alt="Teaser Image"></p>
 
-    <h3 id="the-timeline-and-the-highlights">Explanation</h3>
-    <p>The teaser figure illustrates the sequence of data processing: starting with integration from Canvas, feeding into the LLM for time estimation, and utilizing feedback to enhance future scheduling. This effectively visualizes how our planner iterates over time, improving its accuracy and personalization capabilities.</p>
 
     <hr>
 
-    <h2 id="introduction">Motivation and Problem Formulation</h2>
-    <p><b>Motivation:</b> Many college students face challenges managing their schedules. Unstructured time management leads to missed deadlines, imbalanced workloads, and increased stress. Our Automated School Planner seeks to offer a structured solution that allows students to balance their academic responsibilities effectively by using advanced AI to intelligently allocate time for tasks.</p>
-    <p><b>Problem Definition:</b> The lack of intelligent and adaptive tools to help students schedule their academic workload often results in suboptimal productivity. Current tools either require manual updates or lack personalization, leading to inefficiency. By creating a smart school planner that integrates LLM-based task allocation and user feedback mechanisms, we aim to address these inefficiencies and optimize students' workflow.</p>
-
-    <hr>
-
-    <h2 id="approach">Proposed Ideas and Approach</h2>
-    <p><b>Automated Task Scheduler with LLM Integration:</b> Our approach involves leveraging a large language model to estimate task durations based on assignment descriptions. The LLM will analyze the complexity of each assignment and suggest appropriate time allocations, providing a more realistic and customized schedule for students. This is crucial for students juggling multiple courses and deadlines.</p>
-    <p><b>Canvas API Integration:</b> To make the process seamless for students, we integrated with Canvas using its API to fetch assignments, deadlines, and course details automatically. This saves time and ensures up-to-date information is always used for scheduling.</p>
-    <p><b>Personalization Through Feedback:</b> User feedback is central to our planner. If a student completes a task in less time than suggested, the system will adapt and adjust future estimates accordingly. The feedback mechanism ensures that time estimates become more precise over repeated use, reflecting the individual learning pace and habits of each student.</p>
-    <p><b>Google Calendar Support:</b> To enhance usability, our system allows students to manage their schedules on our platform or export them to Google Calendar, allowing them to integrate their academic commitments with their personal schedules seamlessly.</p>
-
-    <hr>
-
-    <h2 id="literature-review">Literature Review</h2>
-    <p>Our research drew insights from various fields, including Automated Planning (AP), Natural Language Processing (NLP), and personalized learning systems. Automated Planning, commonly used in robotics, inspired our approach to action synthesis for achieving high-level goals—akin to achieving successful task completion for students. We also studied "Automated Educative Nudges," which demonstrated that integrating third-party services with Canvas is feasible, and inspired our API-driven solution. Additionally, research on information extraction using NLP provided foundational methods for analyzing assignment descriptions to gauge task complexity effectively.</p>
-
-    <hr>
-
-    <h2 id="novelty">Novelty of the Approach</h2>
-    <p><b>Unique LLM Utilization:</b> Unlike existing planners, which are mostly rule-based and rigid, our planner leverages an LLM to dynamically infer task duration from assignment details. This allows for more nuanced predictions that consider the content and type of each assignment.</p>
-    <p><b>Canvas Integration:</b> Current tools require students to input their schedules manually, which is time-consuming and error-prone. Our automated integration with Canvas provides a seamless experience that keeps schedules updated without any manual input, which is a unique feature in academic planners.</p>
-    <p><b>User-Centric Adaptation:</b> Through continuous learning from user feedback, the system improves its accuracy over time. This feedback loop ensures that the planner adapts to each student, offering a truly personalized experience unlike standard static scheduling tools.</p>
-
-    <hr>
-
-    <h2 id="results">Preliminary Results</h2>
-    <p><b>Baseline Comparison:</b> To evaluate our LLM-based approach, we established a rule-based baseline system for comparison. The rule-based system takes into account various parameters such as assignment length, course level (to estimate task difficulty), and type of assignment (e.g., essays versus problem sets). By factoring in these details, our baseline provides a reference point for evaluating the LLM's predictive capabilities. Initial testing showed significant improvements in estimation accuracy using LLM, especially for complex assignments.</p>
-    <p><b>LLM-Based Predictions:</b> Our LLM-based predictions performed well in preliminary evaluations, especially with assignments that required multiple steps. The LLM could accurately interpret nuanced details in task descriptions, providing better time estimates than rule-based methods. This result highlights the power of NLP for detailed and context-specific analysis.</p>
-    <p><b>User Feedback Loop:</b> The feedback mechanism is crucial for fine-tuning our predictions. In early tests, feedback data allowed the planner to adjust its subsequent estimates for similar assignments, resulting in greater accuracy and improved user satisfaction. The more a student interacts with the planner, the more tailored and effective the predictions become.</p>
+    <h2 id="introduction">Introduction</h2>
+    <p>We aimed to create a smarter way to suggest products people might like when shopping online, even if they haven't provided much information about themselves. The goal was to solve the issue of making relevant suggestions for new users or items when there's little to no data available. Our objective was to improve how recommendations are made so that they feel more personal and useful for each person.</p>
     
-    <h3 id="excalidraw">Project Planning Visualization</h3>
-    <p>The planning of the project was visualized using Excalidraw, illustrating the architecture of the planner. This includes data integration from Canvas, LLM analysis, task time estimation, and user feedback. Below is the Excalidraw planning diagram that captures the essential components and workflow of the project:</p>
-    <div style="text-align: center;">
-      <a href="./files/project.excalidraw" download="project.excalidraw" class="button is-normal is-rounded is-dark is-outlined">
-        Download Excalidraw File
-      </a>
-
-    <h3 id="llm-testing">LLM Testing and Evaluation</h3>
-    <p>We conducted multiple experiments with different LLMs to determine the best-performing model for our use case. The evaluations considered prompt effectiveness, accuracy of estimated times, and ease of integration into our system. For more details on the testing process and results, please refer to the Google Sheet available <a href="https://docs.google.com/spreadsheets/d/16YQvsw9wDGDMGDVlJIs0UmcJAK4X_ZpI4utdu6fOXWA/edit?usp=sharing" target="_blank">here</a>.</p>
+    <p>Currently, online stores use methods like looking at what other users liked or focusing on product features to make recommendations. However, these methods struggle when there isn't enough information, such as for new users or products, and they often fail to understand the deeper preferences of users.</p>
+    
+    <p>This matters to anyone shopping online or running an online store. For shoppers, better recommendations mean finding what they like faster and having a more enjoyable experience. For businesses, it could lead to happier customers, more purchases, and stronger customer loyalty. If our approach works, it could make online shopping smarter and more satisfying for everyone involved.</p>
+    
 
     <hr>
 
-    <h2 id="conclusion">Conclusion and Future Work</h2>
-    <p><b>Further Exploration:</b> Moving forward, we plan to refine the LLM-based time estimation with more comprehensive metrics, such as historical student performance and specific subject complexities. Additionally, we aim to introduce temporal planning features, like identifying critical path activities and suggesting optimal work sequences to maximize productivity.</p>
-    <p><b>Feedback Response and Mentor Insights:</b> Based on mentor feedback, our future work will focus on deepening the LLM’s role in estimating time durations, particularly through the integration of quantitative measurements to enhance evaluation accuracy. This involves a more sophisticated approach to compare our LLM-driven system against the rule-based baseline and ensure transparency and accountability in its performance.</p>
-    <p><b>Limitations and Potential Risks:</b> Currently, the model may not generalize well for highly specialized assignments that require domain-specific knowledge. We recognize this limitation and plan to incorporate additional training on niche subject areas. We are also exploring ethical considerations around dependency on automated scheduling and its effect on student decision-making, ensuring that our solution empowers rather than diminishes students’ planning skills.</p>
-  </div>
+    <h2 id="approach">Approach</h2>
+<p>To improve product recommendations, we used a combination of modern techniques that go beyond traditional methods. Our approach involved the following key steps:</p>
+
+<h3>1. Data Preparation</h3>
+<p>We started with a dataset of Amazon reviews in the Toys and Games category and refined it by removing unnecessary data, filtering inappropriate content, and focusing on verified purchases. We used advanced tools to turn product descriptions into dense vector representations, making it easier to compare items based on their meaning. Additionally, sentiment analysis was applied to reviews to understand user opinions better.</p>
+
+<h3>2. Recommendation Models</h3>
+<p>We explored four different models to generate recommendations:</p>
+<ul>
+  <li><strong>Model 1: Similarity Index</strong> - This baseline model ranked products by comparing their descriptions to those of previously liked items using cosine similarity.</li>
+  <li><strong>Model 2: Similarity Index + Sentiment Analysis</strong> - Built on Model 1 by also factoring in user sentiment from reviews to prioritize products with positive feedback.</li>
+  <li><strong>Model 3: Similarity Index + LLM Ranking</strong> - Leveraged a large language model (GPT) to refine product rankings by analyzing product metadata for deeper insights.</li>
+  <li><strong>Model 4: LLM + DALL·E for Product Generation</strong> - Used AI to create entirely new product ideas, combining GPT for descriptions and DALL·E for visual representations.</li>
+</ul>
+
+<h3>3. Iterative Workflow</h3>
+<p>Recommendations were refined over time based on user interactions, such as ratings and likes. Each interaction helped adjust the system to provide more personalized and relevant suggestions in subsequent rounds.</p>
+
+    <hr>
+
+    <h2 id="results">Results</h2>
+<p>We evaluated the effectiveness of our models using metrics such as average star ratings, like ratios, and the diversity of recommendations. Here's a summary of the key findings:</p>
+
+<table>
+  <caption><strong>Table 1: Aggregate Metrics for Models</strong></caption>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Final Avg Star Rating</th>
+      <th>Final Like Ratio</th>
+      <th>Diversity (Unique Products)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Model 1: Similarity Index</td>
+      <td>2.50</td>
+      <td>45%</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Model 2: Similarity Index + Sentiment Analysis</td>
+      <td>4.44</td>
+      <td>88%</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Model 3: Similarity Index + LLM Ranking</td>
+      <td>4.34</td>
+      <td>90%</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Model 4: LLM + DALL·E for Product Generation</td>
+      <td>3.41</td>
+      <td>65%</td>
+      <td>32</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The figures below illustrate the comparison of average star ratings and like ratios across the four models:</p>
+
+<!-- Placeholder for Figure 1 -->
+<p><strong>Figure 1:</strong> Average Star Ratings Across Models and Trials</p>
+<img src="files/star.png" alt="Figure 1: Average Star Ratings Across Models">
+
+<!-- Placeholder for Figure 2 -->
+<p><strong>Figure 2:</strong> Like Ratios Across Models and Trials</p>
+<img src="files/likes.png" alt="Figure 2: Like Ratios Across Models">
+
+<h2 id="conclusion">Conclusion and Future Work</h2>
+<p>In this study, we explored the integration of advanced natural language processing techniques, including embeddings, sentiment analysis, and generative AI, into recommendation systems to tackle the cold start problem and enhance user satisfaction. The results showed that hybrid approaches, particularly those combining embeddings and sentiment analysis (Model 2) or leveraging large language models for semantic reasoning (Model 3), significantly outperformed baseline methods in terms of star ratings, like ratios, and recommendation diversity. Generative methods (Model 4) showcased potential for creating novel recommendations but faced limitations in diversity and scalability. These findings highlight the importance of combining traditional retrieval-based methods with modern AI-driven approaches to create scalable and effective recommendation systems.</p>
+
+<p>Future work should focus on addressing the challenges identified in this study, such as enhancing data sparsity solutions, improving the diversity of generative outputs, and refining metrics to better capture user engagement and satisfaction. Further experimentation with diverse datasets across various domains is necessary to validate the robustness of these models. Additionally, incorporating fairness and transparency mechanisms, such as adaptive weighting for underrepresented items and privacy-preserving techniques, could ensure ethical and inclusive applications. By continuing to refine hybrid models and addressing these challenges, we can advance the state of recommendation systems, making them more adaptable, impactful, and user-friendly.</p>
+
 </body>
 </html>
